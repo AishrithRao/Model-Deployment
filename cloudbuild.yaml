@@ -1,7 +1,7 @@
 steps:
 #First Clone from Google Cloud Source Repository  
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone','https://github.com/ChetanTayal138/Model-Deployment']
+  args: ['clone','https://github.com/AishrithRao/Model-Deployment']
 
 #Build the image 
 - name: 'gcr.io/cloud-builders/docker'
@@ -26,17 +26,17 @@ steps:
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
-    _PROJECT: videorecorder-274721
+    _PROJECT: aerobic-star-290316
     _ZONE: us-central1-c
-    _GKE_CLUSTER: cluster-1
+    _GKE_CLUSTER: denoiser-cluster
     
     #Repository Specific configuration. DevOps can change this settings
-    _DEPLOYMENTNAME: denoising-app-service
-    _CONTAINERNAME: denoising-app
-    _REPO_NAME: denoising-app
+    _DEPLOYMENTNAME: denoiser-app
+    _CONTAINERNAME: denoiser-app
+    _REPO_NAME: denoiser-app
     
     # Developers ONLY change
-    _VERSION: v3
+    _VERSION: v4
     
 options:
     substitution_option: 'ALLOW_LOOSE'
